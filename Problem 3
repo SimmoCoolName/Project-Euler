@@ -1,5 +1,13 @@
 # Project Euler: Problem 3
-#Question: "The prime factors of 13195 are 5, 7, 13 and 29.
-What is the largest prime factor of the number 600851475143?"
+#Question: "The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?"
 
 #solution:
+n = 600851475143
+s = 2
+
+while s ** 2 < n:
+    while n % s == 0:
+        n = n // s
+    s += 1
+
+print(n)

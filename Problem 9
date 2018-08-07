@@ -1,0 +1,16 @@
+# Project Euler: Problem 9
+
+def SumCheck(x,y,z):
+	check = False
+	if (x < y) and (y < z) and x+y+z == 1000 and (x**2)+(y**2) == (z**2):
+		check = True
+	else:
+		check = False
+	return check	
+
+for p in range(1,999):
+	for q in range(p,1000):
+		s = ((p**2)+(q**2))**0.5
+		if SumCheck(p,q,s) == True:
+			print(p*q*s)
+			break

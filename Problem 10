@@ -1,0 +1,27 @@
+# Project Euler: Problem 10
+
+total = 0
+
+def sieve_iter(limit, sieve=None):
+    if sieve is None:
+        sieve = list(range(limit))
+    primes = [2]   
+    n = 0          
+    while True:
+        p = primes[n]
+        for i in range(2*p, limit, p):  
+            sieve[i] = 0
+        for i in range(primes[-1], min(limit,p*p)):
+            if sieve[i] > primes[-1]:
+                primes.append(sieve[i])
+        if p*p > limit:
+            break
+        n+=1
+    return primes
+ 
+primes = sieve_iter(2000000)    
+
+for x in primes:
+	total += x
+
+print(total)

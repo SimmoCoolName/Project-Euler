@@ -1,0 +1,24 @@
+# Project Euler: Problem 14
+
+import time
+start = time.time()
+max_value = 0
+max_length = 0
+
+for x in range(999999,699999,-1):
+	t = x
+	a = []
+	while x > 1:
+		if x % 2 == 0:
+			x = x/2
+			a.append(x)
+		else:
+			x = (3*x) +1
+			a.append(x)
+	if len(a) > max_length:
+		max_value = t
+		max_length = len(a)
+
+time_taken = time.time() - start
+
+print("Answer: ",max_value,"in ",time_taken,"seconds.")

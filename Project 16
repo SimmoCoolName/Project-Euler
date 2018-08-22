@@ -1,0 +1,20 @@
+# Project Euler: Problem 16
+
+import time
+start = time.time()
+
+number = 2 ** 1000
+num = str(number)
+length = len(num)
+list1 = []
+
+for x in range(0,length):
+ 	list1.append(num[x])
+
+list1 = [int(i) for i in list1]
+
+value = sum(list1)
+
+time_taken = time.time() - start
+
+print("Answer: ",value,"in ",time_taken,"seconds.")

@@ -1,0 +1,18 @@
+# Project Euler: Problem 19
+
+import calendar
+import time
+start = time.time()
+
+count = 0
+
+for i in range(1,101):
+	for x in range(1,13):
+		if calendar.weekday((1900+i),x,1) == 6:
+			count += 1
+
+value = count
+
+time_taken = time.time() - start
+
+print("Answer: ",value,"in ",time_taken,"seconds.")
